@@ -1,0 +1,15 @@
+# numbers: tuple = (1,2,33,44,55,66,777,888,999)
+
+# for number in numbers:
+#   if 0 < number < 10:
+#    counter1 += 1
+#   elif 10 <+= number < 100:
+#    counter2 += 1
+# else:
+#   counter3 += 1
+
+# print(f'Одна цифра -{counter1} Элемента')
+# print(f'Одна цифра -{counter2} Элемента')
+# print(f'Одна цифра -{counter3} Элемента') 
+
+# Кортежи я не понял так как не хватает ума
