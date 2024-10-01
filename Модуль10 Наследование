@@ -1,0 +1,106 @@
+# Задание 1
+# Создайте класс Device Который содержить информацию об устройствие 
+# с Помощью механизима наследование реализуйте класс CoffeeMachine(Содержит информацию о кофе машине)
+# класс blender (содержить информацию о блендере)
+# класс MeatGrinder(содержит информацию о мясорубке)
+# Каждый из классов должен содержать необходимые 
+# для работы методы
+
+
+class Device:
+
+  def __init__(self, brand: str, model: str, power: str):
+    
+    self._brand: str = brand
+    self._model: str = model 
+    self._power: str = str
+    
+
+class Cofeemachine(Device):
+  
+  def __init__(self, brand: str, model: str, power: str, capacity: int):
+    super().__init__(brand, model, power)
+    self._capacity: int = capacity
+    
+  def coffee(self):
+    print(f'{self._brand} {self._model} {self._capacity}')
+    
+class Blender(Device):  
+  
+ def __init__(self, brand: str, model: str, power: str, speed: int):
+   super().__init__(brand, model, power)
+   self._speed: int = speed
+   
+def blend(self):
+  print(f'{self._brand} {self._model} {self._speed}')
+
+
+class Meatgrinder(Device):
+ 
+  def __init__(self, brand: str, model: str, power: str, capacity: int):
+    super().__init__(brand, model, power)
+    self._capacity: int = capacity
+   
+  def grind(self):
+     print(f'{self._brand} {self._model} {self._capacity}')
+
+coffee = Cofeemachine ("Breville", "Barista Express", 1600, 8)
+blender = Blender("Vitamix", "5200", 1380, "High")
+meat_grinder = Meatgrinder("KitchenAid", "FGA", 250, 5)
+
+
+# Задание 2
+# Создайте класс Ship, который содержит информацию 
+# о корабле.
+# С помощью механизма наследования, реализуйте 
+# класс Frigate (содержит информацию о фрегате), класс 
+# Destroyer (содержит информацию об эсминце), класс 
+# Cruiser (содержит информацию о крейсере).
+# Каждый из классов должен содержать необходимые для работы методы.
+
+
+class Ship:
+
+  def __init__(self, name: str, weight: int, capacity: int):
+    self._name: str = name
+    self._weight: int = weight
+    self._capacity: int = capacity
+    
+class Frigate(Ship):
+  
+   def __init__(self, name: str, weight: int, capacity: int):
+     super().__init__(name, weight, capacity)
+     
+   def fri(self):
+     print(f'{self._name} {self._weight} {self._capacity}') 
+  
+class Destroyer(Ship):
+  def __init__(self, name: str, weight: int, capacity: int):
+    super().__init__(name, weight, capacity)
+    
+  def des(self):
+    def fri(self):
+     print(f'{self._name} {self._weight} {self._capacity}')  
+  
+
+class Cruiser(Ship):
+  def __init__(self, name: str, weight: int, capacity: int):
+    super().__init__(name, weight, capacity)
+    
+  def cru(self):
+    def fri(self):
+     print(f'{self._name} {self._weight} {self._capacity}') 
+     
+fri = Frigate ('') 
+des = Destroyer('')
+cru = Cruiser('') 
+
+
+
+# Запрограммируйте класс Money (объект класса оперирует одной валютой) для работы с деньгами.
+# В классе должны быть предусмотрены поле для хранения целой части денег (доллары, евро, гривны и т.д.) и 
+# поле для хранения копеек (центы, евроценты, копейки 
+# и т.д.).
+# Реализовать методы для вывода суммы на экран, задания значений для частей. 
+
+# Я не Знаю как сделать
