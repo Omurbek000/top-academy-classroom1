@@ -1,0 +1,127 @@
+# Задание 1
+# Создать базовый класс Фигура с методом для подсчета 
+# площади. Создать производные классы: прямоугольник, 
+# круг, прямоугольный треугольник, трапеция со своими 
+# методами для подсчета площади. 
+
+
+
+
+
+
+# Задание 2
+# Для классов из задания 1 нужно переопределить магические методы int(возвращает площадь) и str(возвращает 
+# информацию о фигуре)
+
+
+
+from __future__ import annotations
+
+
+class figure:
+  
+  def __init__(self , name: str):
+    self.name: str = name
+    
+  def get(self):
+      return 0
+    
+  def __str__(self)-> str:
+    return f'{self.name} {self.get()}'
+      
+      
+class Rectangle(figure):
+
+  def __init__(self, name: str , length: float, width: float) :
+      super().__init__(name)
+      self.length: float = length
+      self.width: float = width 
+      
+  def get(self):
+     return self.length * self.width 
+
+class Rightriangle(figure):
+  
+  def __init__(self, name: str , low: float, prow: float):
+    super().__init__(name)
+    self.low: float = low
+    self.prow: float = prow
+
+  def get(self):
+    return self.low * self.prow / 2
+  
+class Circle(figure):
+  
+  def __init__(self, name: str, radius: float):
+    super().__init__(name) 
+    self.radius: float = radius
+
+  def get(self):
+     return 3.14 * self.radius * self.radius
+
+r = Circle(10,18)
+print(r.get())
+
+# Задание 3
+# Создайте базовый класс Shape для рисования плоских 
+# фигур. 
+# Определите методы: 
+# ■ Show() — вывод на экран информации о фигуре;
+# ■ Save() — сохранение фигуры в файл;
+# ■ Load() — считывание фигуры из файла
+# Определите производные классы: 
+# ■ Square — квадрат, который характеризуется координатами левого верхнего угла и длиной стороны;
+# ■ Rectangle — прямоугольник с заданными координатами верхнего левого угла и размерами;
+# ■ Circle — окружность с заданными координатами центра и радиусом;
+# ■ Ellipse — эллипс с заданными координатами верхнего 
+# угла описанного вокруг него прямоугольника со сторонами, параллельными осям координат, и размерами 
+# этого прямоугольника.
+# Создайте список фигур, сохраните фигуры в файл, 
+# загрузите в другой список и отобразите информацию о 
+# каждой из фигур.
+
+
+import math
+
+class Shape(object):
+  
+ def area(self):
+  pass
+
+ def perimeter(self):
+  pass
+ 
+class Square(Shape):
+    
+ def __init__(self, side_length):
+  self.side = side_length
+
+ def area(self):
+  return self.side * self.side
+
+ def perimeter(self):
+  return self.side * 4
+
+class Rectangle(Shape):
+
+ def __init__(self, length, width):
+  self.length = length
+  self.width = width
+
+ def area(self):
+   return self.length * self.width
+
+ def perimeter(self):
+  return 2 * self.length + 2 * self.width
+
+class Circle(Shape):
+
+ def __init__(self, radius):
+   self.radius = radius
+
+ def area(self):
+   return math.pi * self.radius * self.radius
+
+def perimeter(self):
+ return 2 * math.pi * self.radius
+
