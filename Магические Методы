@@ -1,0 +1,107 @@
+# Задача 5: Магические методы
+# Описание: Создайте класс NumberNumber, который будет представлять комплексное число и 
+# реализуйте сложение и вычитание комплексных чисел, используя магические методы add() и sub().
+# Условия:
+#  • Конструктор должен принимать действительную и мнимую части.
+#  • Реализуйте магические методы для сложения и вычитания.
+
+
+class Number:
+ 
+    def __init__(self, num: float, mnim: float):
+      self.__num: float = num
+      self.__mnim: float = mnim
+      
+      
+
+    def __add__(self, other: Number) -> Number:
+       return Number(self.__num + other.__num, self. + other.)
+
+    def __sub__(self, other: Number) -> Number:
+        return Number(self.__num - other.__num, self. - other.)
+
+    def __str__(self) -> str:
+     sign = '+' if self. >= 0 else '-'
+     return f'{self.__num} {sign} i{math.fabs(self.__mnim)}'
+ 
+
+
+#  6: Инкапсуляция
+
+# Описание: Создайте класс Car, который содержит информацию о марке автомобиля,
+# максимальной скорости и текущей скорости. Инкапсулируйте переменные с текущей скоростью, чтобы нельзя было напрямую её изменять.
+# Условия:
+#  • Создайте конструктор, принимающий марку и максимальную скорость.
+#  • Создайте методы для увеличения и уменьшения скорости, контролируя, чтобы скорость не превышала максимальную.
+#  • Добавьте метод для отображения текущей скорости
+
+
+
+class Car:
+ 
+    def __init__(self, brand: str, model: str, year:int, color: str, mileage: int , speed: int,maxspeed: int):
+        self.__brand:str = brand        
+        self.__model:str = model
+        self.__year:int = year
+        self.__color:str = color
+        self.__mileage:int = mileage
+        self.__speed: int = speed
+        self.__maxspeed:int = maxspeed
+ 
+    def __str__(self):
+        return f'''Автомобиль: {self.__brand}  {self.__model}
+       Год выпуска: {self.__year}
+       Цвет: {self.__color}
+       Пробег:  {self.__mileage}
+       скорость {self.__speed}
+       макскорость {self.__maxspeed}'''
+       
+    def speed_up(self, value):
+        if self.__speed + value > self.__maxspeed:
+            self.__speed = self.__maxspeed
+        else:
+            self.__speed += value
+ 
+    def speed_down(self, value):
+        if self.__speed < value:
+            self.__speed = 0
+        else:
+            self.__speed -= value
+    
+# Задача 7: Абстрактные классы
+# Описание: Создайте абстрактный класс Shape, который имеет абстрактный метод get_area().
+# Затем создайте классы Square и Triangle, которые наследуются от этого абстрактного класса и реализуют свои версии метода get_area().
+# Условия:
+#  • Класс Square должен принимать длину стороны, а класс Triangle — основание и высоту.
+#  • Метод get_area() должен возвращать площадь фигуры.
+
+from math import pi 
+from abc import ABC, abstractmethod 
+
+class Shape(ABC): 
+    @abstractmethod 
+    def area(self): 
+        pass 
+
+class Circle(Shape): 
+    def __init__(self, radius:int): 
+        self.radius:int = radius 
+
+    def area(self): 
+        return pi * self.radius ** 2 
+
+class Rectangle(Shape): 
+    def __init__(self, width: int, height: int): 
+        self.width:int = width 
+        self.height:int = height 
+
+    def area(self): 
+        return self.width * self.height 
+
+class Triangle(Shape): 
+    def __init__(self, base: int, height: int): 
+        self.base = base 
+        self.height = height 
+
+    def area(self): 
+        return 0.5 * self.base * self.height
